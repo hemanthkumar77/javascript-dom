@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>abstract</title>
+</head>
+<body>
+<script type="text/javascript">
+	function emp_id()
+	{
+		this.id="none";
+		throw new error("instances cannot be created for this class");
+	}
+	emp_id.prototype.idval=function()
+	{
+		return "id: "+this.id;
+	}
+
+	function employee(val)
+	{
+		this.id=val;
+	}
+
+	employee.prototype=Object.create(emp_id.prototype);
+
+	var emp=new employee(300);
+	document.write(emp.idval());
+
+	alert(emp instanceof emp_id);
+	alert(emp instanceof employee);
+
+</script>
+</body>
+</html>

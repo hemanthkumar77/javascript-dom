@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>event bubling</title>
+	<style type="text/css">
+	#p1{
+            display: table-cell;
+            border: 1px solid black;
+            padding: 20px;
+            text-align: center;
+		}
+	#p2
+	{
+		display: table-cell;
+            border: 1px solid black;
+            padding: 20px;
+            text-align: center;
+	}
+	</style>
+</head>
+<body>
+<div id="p1" onclick="alert('first loop of the bubbling hits')">DIV ELEMENT
+<span  id="p2" onclick="alert('secnd loop of the bubbling hits')">SPAN element
+	<input type="button" value="clickme" onclick="alert('third loop of the bubbling hits')">
+</span>
+</div>
+</body>
+</html>

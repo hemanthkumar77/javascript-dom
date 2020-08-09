@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>event capturing</title>
+	<style type="text/css">
+			#d1{
+            display: table-cell;
+            border: 1px solid black;
+            padding: 20px;
+            text-align: center;
+		}
+	#d2
+	{
+		display: table-cell;
+            border: 1px solid black;
+            padding: 20px;
+            text-align: center;
+	}
+	#d3{
+            display: table-cell;
+            border: 1px solid black;
+            padding: 20px;
+            text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="d1"> DIV1
+	<div id="d2"> DIV2
+		<div id="d3"> DIV3
+			
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var divmethods=document.getElementsByTagName('div');
+	for(i=0;i<divmethods.length;i++)
+	{
+       divmethods[i].addEventListener("click",handlers,true); // event capturing happens because the return phase has the value is true ;
+       divmethods[i].addEventListener("click",handlers,false); // event bubbling happens because the return phase has the value is false;
+	}
+  
+  function handlers(event)
+  {
+  	//event.stopPropagation(); // this will stop both the event handling and the event capturing  
+  	alert(this.getAttribute("id")+" handler done");
+  }
+
+</script>
+</body>
+</html>

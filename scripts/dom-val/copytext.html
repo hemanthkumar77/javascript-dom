@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>copyt text</title>
+</head>
+<input type="text" id="input1">address
+<input type="checkbox"id="chk" onclick="method()">
+<input type="text" id="input2">emergency contact
+<script type="text/javascript">
+  function method()
+  {
+  	txt1=document.getElementById("input1").value;
+  	txt2=document.getElementById("input2");
+  	checker=document.getElementById("chk");
+  	if(checker.checked==true)
+  	{
+  		txt2.value=txt1;
+  	}
+  }
+</script>
+</body>
+</html>

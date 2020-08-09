@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ObjectRefelection</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// base class with this properties 
+		var employee=function(id,name,salary)
+		{
+			this.id=id;
+			this.name=name;
+			this.salary=salary;
+		}
+		// public method to get the id value
+		employee.prototype.get_ID=function()
+		{
+			return this.id;
+		}
+		// public method to get the name value
+		employee.prototype.geT_NAME=function()
+		{
+			return this.name;
+		}
+		// public method to get the salaray 
+		employee.prototype.get_SALARY=function()
+		{
+			return this.salary;
+		}
+         // creating the the object for the base class
+        var emp=new employee(100,"joker",20000);
+
+        // derived class with one properties
+        function Email(email)
+        {
+          this.email=email;
+        }
+
+        // derived class inherited the base class 
+        Email.prototype= emp;
+
+        // public method of the child class 
+        Email.prototype.getval=function()
+        {
+        	return this.email;
+        }
+
+        // creating the child class object        
+        var ema=new Email("h@gmail.com")
+
+        // for each method to retrive all the public methods ema is the child class object which is inherited from the base class
+		for (var property in ema) 
+        {
+       // property is a variable which gives all the public properties and function of the child class and also the base class which is inherites 
+        document.write(property +": "+ema[property] +"<br/>");
+        }
+
+	</script>
+</body>
+</html>

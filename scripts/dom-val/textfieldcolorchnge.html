@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>text field-color</title>
+</head>
+<body>
+<input type="text" id="pfirst" onkeyup="upside('pfirst')" onblur="upside('pfirst')"><br><br>
+<input type="text" id="psecond" onkeyup="upside('psecond')" onblur="upside('psecond')">
+
+<script type="text/javascript">
+function upside(control)
+{
+	var val=document.getElementById(control);
+	val.style.color='white';
+	if(val.value=="")
+	{
+           val.style.background='yellow';
+	}
+	else
+	{
+		val.style.background='blue';
+	}
+}	
+</script>
+</body>
+</html>

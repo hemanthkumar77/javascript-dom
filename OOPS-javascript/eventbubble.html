@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>event bubbling</title>
+	<style type="text/css">
+		#d1{
+            display: table-cell;
+            border: 1px solid black;
+            padding: 20px;
+            text-align: center;
+		}
+	#d2
+	{
+		display: table-cell;
+            border: 1px solid black;
+            padding: 20px;
+            text-align: center;
+	}
+	#d3{
+            display: table-cell;
+            border: 1px solid black;
+            padding: 20px;
+            text-align: center;
+		}
+
+	</style>
+</head>
+<body>
+<div id="d1"> DIV1
+	<div id="d2"> DIV2
+		<div id="d3"> DIV3
+			
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	// get all the values in the tag name were it can get only by array 
+	var retrive=document.getElementsByTagName('div');
+	for(i=0;i<retrive.length;i++)
+	{
+		// when ever any div element is touched automatically the onclick operations is performed, but they are retrive only by the array format because of the name tag , to stop the event you need to pass the event inside the function only  
+		retrive[i].onclick=function(event)
+		{
+           // it is not nessscary but certain chrome editions needs the windows.event instead of event to get captured 
+			event =event || window.event;
+			// this will track the events once if any div is touched the operation performed it has record that already the event operation is done so it will won't another nested operation or hierachy to change in it  same way some search engine verions supports the stopPropagation other still cancelbubble=true 
+			if(event.stopPropagation)
+			{
+				event.stopPropagation();
+			}
+			else
+			{
+				event.cancelBuuble=true;
+			}
+			this.style.borderColor="red";
+			
+			// it is getting only the id of the div tags
+			alert(this.getAttribute("id")+"value changed");
+		}
+	}
+</script>
+</body>
+</html>

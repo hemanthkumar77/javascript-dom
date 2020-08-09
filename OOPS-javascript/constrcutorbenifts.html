@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script type="text/javascript">
+function name()
+{
+	this.id=200;
+}	
+var obj=new name();
+var newobj=new name();
+//before changes in the value
+document.write(obj.id+"<br/>");
+document.write(newobj.id+"<br/>");
+// benifits of using the constructor change in one value is affecting the entire script;
+//after the chnaging the value
+newobj.id=300;
+document.write(obj.id+"<br/>");
+document.write(newobj.id+"<br/>");
+</script>
+</body>
+</html>

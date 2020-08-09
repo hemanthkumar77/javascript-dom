@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		factorial=1;
+		i=0;
+	function call(n,i)
+	{
+		if(n>i)
+		{
+			factorial=factorial*n;
+			document.write(factorial+" ");
+			n--;
+			call(n,i);
+		}
+
+	}	
+	call(5,0);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

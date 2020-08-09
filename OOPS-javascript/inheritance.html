@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IHERITANCE</title>
+</head>
+<body>
+<script type="text/javascript">
+	// parent class 
+	function employee_id(id)
+	{
+		this.id=id;
+	}
+	//parent class public method 
+	employee_id.prototype.idval=function()
+	{
+		return this.id;
+	}
+	
+	// child class once it is inherited it can create the public class 
+	function employee_name(name)
+	{
+	this.name=name;
+	this.val=function()
+	{
+		return this.name;
+	}
+	
+	}
+	//parent class object
+	var emp_id=new employee_id(100);
+    // child class inheriting the parent class completely
+	employee_name.prototype=emp_id;
+    // child class object 
+	var emp_name=new employee_name("joker");
+     
+     // accessing the child class object the parent class function
+	document.write("parent class function by calling with child class object: "+emp_name.idval()+"<br/>");
+	document.write("child class function called by the child object: "+emp_name.val()+"<br/>");
+    
+    //checking the the variables of the respective classes.
+	alert("parent class property check: "+employee_id.hasOwnProperty('id'));
+	alert("child class poperty check "+employee_name.hasOwnProperty('name'));
+</script>
+</body>
+</html>

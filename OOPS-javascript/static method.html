@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>static method</title>
+</head>
+<body>
+<script type="text/javascript">
+function value(radius)
+{
+	this.ra=radius;
+	value.count= ++value.count || 1; // if the count already has value increase to next value if not intialze to 1 
+	value.method=function()
+	{
+		return value.count;
+	}
+}
+var r1=new value(4);
+var r2=new value(5);
+var r3=new value(6);
+var r4=new value(7);
+document.write("total object: "+value.method());
+</script>
+</body>
+</html>

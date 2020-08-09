@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>properties in OOPS</title>
+</head>
+<body>
+<script type="text/javascript">
+	function name(id,name,salary)
+	{
+		var emp_id=id;
+		var emp_name=name;
+		var emp_sal=salary;
+		Object.defineProperty(this,"ID",{
+			set: function(value)
+			{
+				if(value<=0 || value>400)
+				{
+					alert("invalid id");
+				}
+				else
+				{
+					emp_id=value;
+				}
+			},
+
+			get: function()
+			{
+               return emp_id;
+			}
+		})
+		Object.defineProperty(this,"NAME",{
+			get:function()
+			{
+				return emp_name;
+			}
+		})
+		Object.defineProperty(this,"SAL",{
+			set:function(value)
+			{
+				if(value>20000)
+				{
+					alert("invalid salary amount");
+				}
+				else
+				{
+					emp_sal=value;
+				}
+			},
+			get:function()
+			{
+				return emp_sal ;
+			}
+		})
+	}
+	var employee=new name(100,"joker",20000);
+	employee.ID=390;
+	employee.NAME="jigsaw";
+	employee.SAL=7000;
+	document.write(employee.ID+" "+employee.NAME+" "+employee.SAL);
+</script>
+</body>
+</html>

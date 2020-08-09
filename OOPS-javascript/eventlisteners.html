@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EventListenrs</title>
+</head>
+<body>
+<input type="button" id="pic" value="colorch"><br><br>
+<input type="button" id="pics" value="remove" onclick="remove()" >
+<script type="text/javascript">
+pic.addEventListener("mouseover",inp);
+pic.addEventListener("mouseout",out);
+function inp()
+{
+  this.style.background="blue";
+  this.style.font="yellow";
+}
+function out()
+{
+	 this.style.background="white";
+  this.style.font="black";
+}
+function remove()
+{
+	pic.removeEventListener("mouseover",inp);
+	pic.removeEventListener("mouseout",out);
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>header value change</title>
+</head>
+<body>
+<h1 id="head">welcome to the club</h1>
+<input type="text" id="val">
+<input type="button" value="fire" onclick="method()">
+<script type="text/javascript">
+	function method()
+	{
+		a=document.getElementById("val").value;
+		b=document.getElementById("head");
+        b.innerHTML="welcome user"+","+a;
+        a="";
+        a.focus();
+	}
+</script>
+</body>
+</html>

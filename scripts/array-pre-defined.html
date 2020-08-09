@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>pre-defined values</title>
+</head>
+<body>
+<script type="text/javascript">
+	 var array1=[];
+	 var input=prompt("enter how many values need to enter into the array");
+	 var array2=[];
+	 //first array input recursion
+	 function array_input(i,arr1) // recursion operation
+	 {
+         if(i<input)
+         {
+         	arr1[i]=prompt("enter the value");
+         	i++;
+         	array_input(i,arr1);
+         }
+	 }
+	 array_input(0,array1); // function calling
+     array_input(0,array2);
+    recursion=function (i,arr2)
+    {
+       if(i<arr2.length)
+       {
+       	 document.write(arr2[i]+" ");
+       	 i++;
+       	 recursion(i,arr2);
+       }
+    }
+  recursion(0,array1)
+  document.writeln();
+  recursion(0,array2)
+   
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>public,private,privileged</title>
+</head>
+<body>
+<script type="text/javascript">
+	function details(id,name,salary)
+	{
+	   // private field within the this function scope
+	   var info;
+
+       // public fields within the this function scopes
+	   this.id=id;
+	   this.name=name;
+	   this.salary=salary;
+ 
+       // complete private method   
+      var emp_info=function()
+      {
+      	 info="ID: "+id+" "+"NAME: "+name+" "+"SALARY: "+ salary;
+      	 return info;
+      }
+      
+      // privileged method in this private can be able to access inside the constructor
+      this.privileged=function() 
+      {
+      	  return emp_info();
+      }
+
+      // public method able to access only the privileged method inside the function 
+      details.prototype.public=function()
+      {
+      	return this.privileged();
+      }
+
+	}
+
+var information=new details(100,"joker",20000);
+information.info="overrided with private access value";// private value is overrided and accessible 
+document.write(information.public());//(ID: 100 NAME: joker SALARY: 20000) 
+document.write(information.info);// it will give the value of the (overrided with private access value)
+</script>
+</body>
+</html>

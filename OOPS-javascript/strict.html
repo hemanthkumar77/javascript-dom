@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>strict mode</title>
+</head>
+<body>
+<script type="text/javascript">
+	// using strict will cause defientley error if it is any specfically mentioned
+	//"use strict"
+	function student(id)
+	{
+		this.id=id;
+		Object.defineProperty(this,"NAME",{
+           get:function()
+           {
+           	return id;
+           }
+			});
+	}
+	var stu=new student(100);
+	stu.NAME=300;
+	document.write(stu.NAME);
+</script>
+</body>
+</html>

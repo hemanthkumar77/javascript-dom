@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>prototype</title>
+</head>
+<body>
+<script type="text/javascript">
+	function employee(id,name,salary)
+	{
+		this.id=id;
+		this.name=name;
+		this.salary=salary;
+	}
+	employee.prototype.details=function() // it is globally accessible everywhere in the nook and corner
+	{
+		return ("id: "+this.id+" "+"name: "+this.name+" "+"salary: "+this.salary);
+	}
+	var emp1=new employee(100,"joker",20000);
+	var emp2=new employee(200,"jigsaw",18000);
+	document.write("employee first: "+ emp1.details()+"<br/>");
+	document.write("employee second: "+emp2.details());
+</script>
+</body>
+</html>

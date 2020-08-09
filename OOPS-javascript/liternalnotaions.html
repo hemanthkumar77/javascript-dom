@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>literalnotations</title>
+</head>
+<body>
+<script type="text/javascript">
+	var employee=
+	{
+		firstname: "hemanth kumar",
+		lastName: "Kumar",
+		designation:"java full stack microservices junior web developer",
+		details:function() 
+		{
+		   return (this.firstname+this.lastName+this.designation);
+		}
+	}
+	document.write("details: "+employee.details()+"<br/>");
+	// for the benifits of using literals once the value changed it will be affected in all around in the script.
+	var newemp=employee;
+	document.writeln("before change newemp: "+newemp.firstname+"<br/>");
+	document.writeln("befor change employee: "+employee.firstname+"<br/>");
+	//after the change in the firstname
+	newemp.firstname="joker";
+	newemp.lastName="ledger";
+		document.writeln("after change newemp: "+newemp.firstname+"<br/>");
+	document.writeln("after change employee: "+employee.firstname+"<br/>");
+
+</script>
+</body>
+</html>

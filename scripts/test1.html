@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<form action="screensaver.html" method="post" onsubmit="tester()">
+username:<input type="text" id="txt1">
+password:<input type="password" id="txt2">
+<input type="checkbox" id="chk">Remember me?
+<input type="submit" value="login"> <input type="button" value="remove" onclick="del()">
+</form>
+<script type="text/javascript">
+function tester()
+{
+val=document.getElementById("txt1").value;
+pas=document.getElementById("txt2").value;
+cor=document.getElementById("chk");
+if(cor.checked==true)
+{
+ localStorage.setItem("u",val);
+ localStorage.setItem("p",pas);
+}
+}
+
+function del()
+{
+	localStorage.clear();
+	window.loaction.reload();
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		  a=0;
+		function condition()
+		{
+          
+            while(a!=5)
+            {
+            	alert("1.addition"+"2.subraction"+"3.division"+"4.multiplication"+"5.terminate");
+                a=prompt();
+            	alert("enter the two numbers: ");
+                var no1=prompt();
+                var no2=prompt();
+            	switch(Number(a))
+            	{
+            		case 1:
+                         var sum=parseInt(no1)+parseInt(no2);
+                         alert("sum of the two_nums: "+sum);
+                         break;
+                     case 2:
+                          var sub=parseInt(no1)-parseInt(no2);
+                          alert("sub of the two_nums: "+sub);
+                         break;
+                     case 3:
+                          var mul=parseInt(no1)*parseInt(no2);
+                         alert("mul of the two_nums: "+mul);
+                         break;
+                     case 4:
+                           var div=parseInt(no1)/parseInt(no2);
+                         alert("sof the two_nums: "+parseInt(div));
+                         break;
+                     case 5:
+                          alert("terminated");
+                          break;
+                      default:
+                           alert("wrong value");
+                           break;
+            	}
+            }
+		}
+		condition();
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+

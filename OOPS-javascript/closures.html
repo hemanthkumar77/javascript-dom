@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>closures</title>
+</head>
+<body>
+<script type="text/javascript">
+	
+	var x=function (first,second)
+	{
+		var holder="result of adding two numbers: ";
+		function op()
+		{
+			return holder+(first+second);
+		}
+		return op;
+	}
+	var result=x(4,5);
+	document.writeln("before using the parenstese call"+ result);
+	document.writeln("after using the parenstese call"+result());
+</script>
+</body>
+</html>

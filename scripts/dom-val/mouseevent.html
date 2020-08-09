@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mouse events</title>
+</head>
+<body>
+<input type="button" value="click" id="p2" onmouseover="ck()" onmouseout="ok()" >
+<script type="text/javascript">
+	function ck()
+	{
+        val=document.getElementById("p2");
+        val.style.background="green";
+        val.style.font="white";
+	}
+	function ok()
+	{
+		 val=document.getElementById("p2");
+        val.style.background="blue";
+        val.style.font="black";
+	}
+</script>
+</body>
+</html>

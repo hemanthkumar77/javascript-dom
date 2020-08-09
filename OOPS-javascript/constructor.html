@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Constructor</title>
+</head>
+<body>
+<script type="text/javascript">
+	function constrcutor(id,name,salary)
+	{
+		this.id=id;
+		this.name=name;
+		this.salary=salary;
+		this.details=function()
+		{
+			return ("id_of_employee: "+this.id+"<br>"+"name of the employee: "+this.name+"<br>"+"salary_details: "+this.salary);
+		}
+	}
+	employee=new constrcutor(100,"jigsaw",20000);
+	document.write("id: "+employee.id);
+	document.write("details: "+employee.details());
+</script>
+</body>
+</html>

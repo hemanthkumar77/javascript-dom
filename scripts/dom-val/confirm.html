@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>confirmation box</title>
+</head>
+<body>
+	<input type="button" id="p1" value ="click" onclick="ck()">
+<script type="text/javascript">
+	function ck()
+	{
+		val=document.getElementById("p1");
+		if(confirm("are you sure to continue ?"))
+		{
+			alert("you deleted the following number: ");
+			return true;
+		}
+		else
+		{
+			alert("you cancelled");
+			return false;
+		}
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>timing events</title>
+	<script type="text/javascript">
+		var v=setInterval(method,2000);
+		val=prompt("enter the input to print backward: ");
+		function method()
+		{
+			if(val>=0)
+			{
+				document.write(val+" ");
+				val--;
+			}
+			else
+			{
+				clearInterval(val);
+			}
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

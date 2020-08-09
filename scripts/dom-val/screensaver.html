@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>automatic screen-rotater</title>
+</head>
+<body>
+	<input type="button" value="<<" onclick="method1()">
+<img src="../images/pic1.png" id="pic" >
+<a href="test1.html">LogOut</a>
+<input type="button" value=">>" onclick="method()">
+<script type="text/javascript">
+	i=0;
+  a=["../images/pic1.png","../images/pic2.jpg","../images/pic3.jpg","../images/pic4.jpg","../images/pic5.jpg"]
+  //setInterval(method,3000)
+  function method()
+  {
+  	id=document.getElementById("pic");
+  	id.src=a[i];
+  	i++;
+  	if(i==a.length)
+  	{
+  		i=0;
+  	}
+  }
+  function method1()
+  {
+  	id=document.getElementById("pic");
+  	i--;
+  	id.src=a[i];
+  	if(i==0)
+  	{
+  		i=a.length;
+  	}
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>polymorphism</title>
+</head>
+<body>
+<script type="text/javascript">
+	//base class 
+	function java(){}
+	java.prototype.idval=function()
+	{
+		return "id:100"+" "+"name:jigsaw"+" "+"salary:6000.23";
+	}
+ 
+    // derived class inherit the base class
+	function dotnet(){}
+	dotnet.prototype=Object.create(java.prototype);
+	dotnet.prototype.idval=function()
+	{
+		return "id:200"+" "+"name:joker"+" "+"salary:5000.23";
+	}
+
+    // derived class inherit the base class 
+	function tester(){}
+	tester.prototype=Object.create(java.prototype);
+	tester.prototype.idval=function()
+	{
+		return "id:300"+" "+"name:batman"+" "+"salary:3555.23";
+	}
+
+    // derived class inherit the base class 
+	function HResource(){}
+    HResource.prototype=Object.create(java.prototype);
+ 
+ // creating the array of the objects 
+ var object=[new java(),new dotnet(),new tester(),new HResource()];
+ object.forEach(function(obj)
+{
+	document.write(obj.idval()+"<br/>");
+}
+ 	)
+
+
+</script>
+</body>
+</html>
